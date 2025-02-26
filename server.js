@@ -46,5 +46,6 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-// 🔹 Vercel no usa `app.listen()`
-export default app;
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`🚀 Servidor iniciado en el puerto ${process.env.PORT || 3000}`);
+});
