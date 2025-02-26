@@ -1,90 +1,111 @@
 # DeepSeek Chat Application 🌐💬
 
-¡Bienvenido a DeepSeek! Esta es una aplicación de chat interactiva que utiliza la API de DeepSeek para proporcionar respuestas inteligentes y útiles a los usuarios. Este proyecto fue creado para demostrar cómo se puede integrar una API de inteligencia artificial en una aplicación web moderna.
+¡Bienvenido a **DeepSeek Chat**! Esta es una aplicación de chat interactiva que utiliza la **API de DeepSeek** para proporcionar respuestas inteligentes y útiles a los usuarios. 
 
-## Tabla de Contenidos 📚
+---
+
+## ✨ Tabla de Contenidos
 
 - [Descripción del Proyecto](#descripción-del-proyecto)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Instalación](#instalación)
-- [Configuración](#configuración)
+- [Instalación y Configuración](#instalación-y-configuración)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Uso](#uso)
+- [Despliegue](#despliegue)
+  - [Backend en Render](#backend-en-render)
+  - [Frontend en Vercel](#frontend-en-vercel)
 - [Contribuciones](#contribuciones)
 - [Licencia](#licencia)
 - [Contacto](#contacto)
 
-## Descripción del Proyecto 📝
+---
 
-DeepSeek es una aplicación de chat que permite a los usuarios interactuar con un modelo de inteligencia artificial para obtener respuestas a sus preguntas. La aplicación está diseñada para ser fácil de usar y proporciona una interfaz de usuario atractiva y responsiva.
+## 📃 Descripción del Proyecto
 
-## Tecnologías Utilizadas 🛠️
+DeepSeek es una aplicación de chat que permite a los usuarios interactuar con un modelo de inteligencia artificial para obtener respuestas a sus preguntas. La aplicación está diseñada para ser **rápida, intuitiva y fácil de usar**.
 
-- **Frontend:**
-  - HTML5
-  - CSS3
-  - JavaScript (ES6+)
+---
 
-- **Backend:**
-  - Node.js
-  - Express.js
-  - OpenAI API
+## 🔧 Tecnologías Utilizadas
 
-- **Otros:**
-  - Vercel (para despliegue)
-  - Dotenv (para gestión de variables de entorno)
-  - Body-parser (para parseo de JSON en solicitudes HTTP)
+### **Frontend:**
+- HTML5
+- CSS3
+- JavaScript (ES6+)
 
-## Instalación 🛠️
+### **Backend:**
+- Node.js
+- Express.js
+- OpenAI API (DeepSeek)
+- CORS
+- Dotenv
+- Body-parser
 
-Sigue estos pasos para instalar y ejecutar el proyecto en tu máquina local:
+### **Despliegue:**
+- **Backend:** Render.com
+- **Frontend:** Vercel
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/JuanBuitrago04/DeepSeekApi.git
-   cd DeepSeekApi
-   ```
+---
 
-2. **Instala las dependencias del backend:**
-   ```bash
-   cd backend
-   npm install
-   ```
+## ⚡ Instalación y Configuración
 
-3. **Instala las dependencias del frontend:**
-   ```bash
-   cd ../frontend
-   npm install
-   ```
+### **1. Clona el repositorio:**
+```sh
+ git clone https://github.com/JuanBuitrago04/DeepSeekApi.git
+ cd DeepSeekApi
+```
 
-## Configuración ⚙️
+---
 
-1. **Configura las variables de entorno:**
+## 💻 Backend
 
-   Crea un archivo `.env` en el directorio `backend` y agrega tu clave de API de DeepSeek:
-   ```properties
-   DEEPSEEK_API_KEY=tu_clave_de_api_aquí
-   ```
+### **2. Instala las dependencias:**
+```sh
+ cd backend
+ npm install
+```
 
-2. **Inicia el servidor:**
-   ```bash
-   cd backend
-   npm start
-   ```
+### **3. Configura las variables de entorno:**
+Crea un archivo `.env` dentro de la carpeta `backend` y agrega:
+```properties
+ DEEPSEEK_API_KEY=tu_api_key_aqui
+ PORT=10000
+```
 
-3. **Abre el frontend:**
-   Abre el archivo `index.html` en tu navegador preferido.
+### **4. Inicia el servidor:**
+```sh
+ npm start
+```
+El servidor se iniciará en: `http://localhost:10000`
 
-## Estructura del Proyecto 📂
+---
 
-La estructura del proyecto es la siguiente:
+## 🎨 Frontend
 
+### **5. Instala las dependencias (si es necesario):**
+```sh
+ cd ../frontend
+ npm install
+```
+
+### **6. Modifica la URL de la API en `script.js`:**
+Abre `script.js` y asegúrate de que la URL apunte al backend correcto:
+```js
+ const API_URL = "https://deepseek-backend.onrender.com/chat";
+```
+
+### **7. Abre `index.html` en tu navegador.**
+
+---
+
+## 📁 Estructura del Proyecto
 ```
 DeepSeekApi/
 ├── backend/
 │   ├── .env
 │   ├── .gitignore
-│   ├── controller.js
 │   ├── package.json
 │   ├── server.js
 ├── frontend/
@@ -94,46 +115,74 @@ DeepSeekApi/
 ├── README.md
 ```
 
-## Uso 🚀
+---
 
-1. **Interfaz de Usuario:**
-   - Al cargar la página, aparecerá un modal explicativo con instrucciones sobre cómo usar la aplicación.
-   - Escribe tu mensaje en el campo de entrada y presiona el botón de enviar (➤) para enviar tu mensaje.
-   - Presiona el botón de limpiar (✖) para limpiar la conversación.
+## 🚀 Uso
 
-2. **Interacción con la API:**
-   - La aplicación enviará tu mensaje a la API de DeepSeek y mostrará la respuesta en el área de conversación.
+1. **Ingresa a la aplicación**.
+2. **Escribe tu mensaje en la caja de texto** y presiona el botón de enviar.
+3. **El chatbot responderá usando la API de DeepSeek**.
+4. **Puedes limpiar la conversación presionando el botón de reinicio**.
 
-## Contribuciones 🤝
+---
 
-¡Las contribuciones son bienvenidas! Si deseas contribuir a este proyecto, sigue estos pasos:
+## 🌍 Despliegue
 
-1. **Fork el repositorio.**
-2. **Crea una nueva rama:**
-   ```bash
+### **Backend en Render**
+Para desplegar el backend en Render, sigue estos pasos:
+1. Sube el código a **GitHub**.
+2. Ve a [Render.com](https://dashboard.render.com/) y crea un nuevo servicio web.
+3. Conéctalo con tu repositorio.
+4. Configura:
+   - **Build Command:** `npm install`
+   - **Start Command:** `npm start`
+5. Agrega la variable de entorno `DEEPSEEK_API_KEY` en Render.
+6. Despliega el servicio.
+
+---
+
+### **Frontend en Vercel**
+Para desplegar el frontend en Vercel:
+1. Ve a [Vercel.com](https://vercel.com/) e inicia sesión.
+2. Crea un nuevo proyecto y conecta tu repositorio de GitHub.
+3. Configura los archivos públicos.
+4. Despliega y prueba la URL del frontend.
+
+---
+
+## 🤝 Contribuciones
+
+Si deseas contribuir:
+1. **Haz un fork del repositorio.**
+2. **Crea una rama nueva:**
+   ```sh
    git checkout -b mi-nueva-rama
    ```
-3. **Realiza tus cambios y haz commit:**
-   ```bash
-   git commit -m "Descripción de mis cambios"
+3. **Realiza los cambios y haz commit:**
+   ```sh
+   git commit -m "Descripción de los cambios"
    ```
-4. **Envía tus cambios al repositorio remoto:**
-   ```bash
+4. **Envía los cambios:**
+   ```sh
    git push origin mi-nueva-rama
    ```
-5. **Abre una solicitud de pull.**
+5. **Abre un Pull Request en GitHub.**
 
-## Licencia 📄
+---
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para obtener más detalles.
+## 📜 Licencia
 
-## Contacto 📧
+Este proyecto está licenciado bajo la **Licencia MIT**.
 
-Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
+---
+
+## 📧 Contacto
+
+Si tienes preguntas o sugerencias, contáctame:
 
 - **Correo Electrónico:** [juanbuitrago04@gmail.com](mailto:juanbuitrago04@gmail.com)
 - **GitHub:** [JuanBuitrago04](https://github.com/JuanBuitrago04)
 
 ---
 
-¡Gracias por visitar DeepSeek! Esperamos que disfrutes usando nuestra aplicación de chat. 😊✨
+🚀 **¡Gracias por visitar DeepSeek! Esperamos que disfrutes usando nuestra aplicación de chat.** ❤️
