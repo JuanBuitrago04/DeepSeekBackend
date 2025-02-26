@@ -9,7 +9,6 @@ dotenv.config(); // Cargar variables de entorno
 if (!process.env.DEEPSEEK_API_KEY) {
   throw new Error("Falta la API Key de DeepSeek en el archivo .env");
 }
-
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
